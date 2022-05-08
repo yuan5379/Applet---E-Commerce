@@ -1,0 +1,31 @@
+<!--pages/shopcar/shopcar.wxml-->
+<mp-cells title="配送至天远豪城" footer="左滑可以删除" wx:if="{{cartList.length}}">
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtontap" wx:for="{{cartList}}" wx:key="item" data-id="{{item.id}}">
+        <mp-cell>
+            <view slot="footer" class="cellfooter">
+                <text bindtap="handlejian" data-item="{{item}}">-</text>
+                <text>{{item.number}}</text>
+                <text bindtap="handlejia" data-item="{{item}}">+</text>
+            </view>
+            <view class="content">
+                <checkbox checked="{{item.checked}}" bindtap="handleTap" data-item="{{item}}"></checkbox>
+                <image src="http://localhost:5002{{item.good.poster}}" mode="aspectFit"></image>
+                <view style="font-size: 13px;">
+                    <view>{{item.good.title}}</view>
+                    <view style="color: red;">￥{{item.good.price}}</view>
+                </view>
+            </view>
+        </mp-cell>
+    </mp-slideview>
+</mp-cells>
+<view wx:else style="text-align: center;">购物车空空如也</view>
+
+<wxs src="./shopcar.wxs" module="obj"></wxs>
+<view class="footer">
+    <checkbox-group bindchange="handchange" >
+        <checkbox value="aaa" checked="{{obj.chack(cartList)}}"></checkbox>
+    </checkbox-group>
+    <view style="margin-right: 20px;">全选</view>
+    <view>合计:￥{{obj.sum(cartList)}}</view>
+    <button type="primary" size="mini">去结算</button>
+</view>

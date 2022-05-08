@@ -1,0 +1,57 @@
+/* pages/detail/detail.wxss */
+.detailtabber {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    display: flex;
+    background-color: white;
+    height: 100rpx;
+    padding: 20rpx;
+    position: sticky;
+    top: 0;
+}
+.detailtabber view{
+    flex: 1;
+}
+.detailtabber .active{
+    border-bottom:3px solid red;
+}
+.user {
+    overflow: hidden;
+    padding: 20rpx;
+}
+.user image{
+    width: 100rpx;
+    border-radius: 50%;
+}
+.user .left{
+    float: left;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.user .right {
+    float: right;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.content {
+    padding: 20rpx;
+}
+.content image{
+    width: 200rpx;
+}
+.bottom{
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+}
+.bottom view{
+    flex: 1;
+    color: white;
+}
